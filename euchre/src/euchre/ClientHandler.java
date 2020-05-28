@@ -3,7 +3,7 @@
  *
  * from https://www.geeksforgeeks.org/multi-threaded-chat-application-set-1/
  */
-package multithreadchatserver;
+package euchre;
 
 import java.io.*; 
 import java.util.*; 

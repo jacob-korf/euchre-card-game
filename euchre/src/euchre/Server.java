@@ -6,7 +6,7 @@
  *  Assumes: ports used (here, port 1234) is not restricted or blocked by firewall
  */
 
-package multithreadchatserver;
+package euchre;
 
 import java.io.*; 
 import java.util.*; 
