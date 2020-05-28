@@ -16,7 +16,9 @@ public class Server
 { 
 	// Vector to store active clients 
 	static Vector<ClientHandler> ar = new Vector<>(); 
-   
+	private int[] score = new int[4];
+	private int[] current_tricks = new int[2];
+	private int[] deck = new int[24];
 	// counter for clients 
 	static int i = 0; 
 
