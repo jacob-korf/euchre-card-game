@@ -18,12 +18,15 @@ public class Server
 	static Vector<ClientHandler> ar = new Vector<>(); 
 	private int[] score = new int[4];
 	private int[] current_tricks = new int[2];
-	private int[] deck = new int[24];
+	private static Card[] deck = new Card[24];
 	// counter for clients 
 	static int i = 0; 
 
 	public static void main(String[] args) throws IOException  
 	{ 
+		for(int x = 0; x < deck.length; ++x) {
+			deck[x] = new Card((x%6)+9, "Sample URL");
+		}
 		// server is listening on port 1234 
 		@SuppressWarnings("resource")
 		ServerSocket ss = new ServerSocket(1234); 	// socket for server side
