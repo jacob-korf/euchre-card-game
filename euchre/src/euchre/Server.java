@@ -22,7 +22,7 @@ public class Server
 	private int cardPos = 0;
 	// counter for clients 
 	static int i = 0; 
-
+	private static Boolean isInitial = true;
 	public static void main(String[] args) throws IOException  
 	{ 
 		for(int x = 0; x < 24; ++x) {
@@ -79,7 +79,7 @@ public class Server
 
 				// increment i for new client name
 				i++; 
-			} else if(ar.size() == 4) {
+			} else if(isInitial) {
 				Collections.shuffle(deck);
 				int incrementer = 0;
 				for(ClientHandler mc : Server.ar) {
@@ -88,6 +88,7 @@ public class Server
 						incrementer++;
 					}
 				}
+				isInitial = false;
 			}
 
 		}	// end - while true loop 

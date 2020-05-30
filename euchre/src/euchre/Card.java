@@ -15,4 +15,7 @@ public class Card {
 	public String getImage() {
 		return URL;
 	}
+	public String toString() {
+		return value + " " + suit;
+	}
 }
