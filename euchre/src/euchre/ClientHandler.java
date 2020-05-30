@@ -19,6 +19,7 @@ class ClientHandler implements Runnable {
 	final DataOutputStream dos; 					// output stream for this client
 	Socket s; 										// socket for this client
 	boolean isloggedin; 							// flag, whether client is currently connected
+	private ArrayList<Card> hand = new ArrayList<Card>();
    
 	// constructor 
 	public ClientHandler(Socket s, String name, DataInputStream dis, DataOutputStream dos) { 
@@ -78,5 +79,11 @@ class ClientHandler implements Runnable {
 			e.printStackTrace(); 
 		} 
 	} 	// end - method run
+
+	public void addCardToHand(Card card) {
+		// TODO Auto-generated method stub
+		hand.add(card);
+		System.out.println(hand);
+	}
 	
 }	// end - class ClientHandler

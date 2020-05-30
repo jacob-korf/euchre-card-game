@@ -18,14 +18,17 @@ public class Server
 	static Vector<ClientHandler> ar = new Vector<>(); 
 	private int[] score = new int[4];
 	private int[] current_tricks = new int[2];
-	private static Card[] deck = new Card[24];
+	private static  ArrayList<Card> deck = new ArrayList<Card>();
+	private int cardPos = 0;
 	// counter for clients 
 	static int i = 0; 
 
 	public static void main(String[] args) throws IOException  
 	{ 
-		for(int x = 0; x < deck.length; ++x) {
-			deck[x] = new Card((x%6)+9, "Sample URL");
+		for(int x = 0; x < 24; ++x) {
+			deck.add(new Card((x%6)+9, x/6, "Sample URL"));
+			System.out.print((x%6)+9);
+			System.out.println(" " + x/6);
 		}
 		// server is listening on port 1234 
 		@SuppressWarnings("resource")
@@ -76,6 +79,15 @@ public class Server
 
 				// increment i for new client name
 				i++; 
+			} else if(ar.size() == 4) {
+				Collections.shuffle(deck);
+				int incrementer = 0;
+				for(ClientHandler mc : Server.ar) {
+					for(int x = 0; x < 5; x++) {
+						mc.addCardToHand(deck.get(incrementer));
+						incrementer++;
+					}
+				}
 			}
 
 		}	// end - while true loop 
