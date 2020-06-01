@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,7 +21,7 @@ import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
 public class Hub extends JFrame{
-
+		private String[] string = {"Hello", "Goodbye"};
 		private static JLabel currentClients = new JLabel("Current Client: ");
 		private JLabel workstation = new JLabel("WorkStation             ");
 		private JLabel RequestTime = new JLabel("   RequestTime          ");
@@ -29,6 +31,8 @@ public class Hub extends JFrame{
 		private static JLabel clock = new JLabel();
 		private static JTextArea queue = null;
 		private static Boolean connect = false;
+		private JButton connectToGame = new JButton("Connect to this Game");
+		private JComboBox<String> gameOptionsBox = new JComboBox<String>(string);
 
 		public static void main(String[] args) {
 			try {
@@ -85,7 +89,7 @@ public class Hub extends JFrame{
 			constraints.gridwidth = 2;
 			constraints.gridheight = 1;
 			constraints.anchor = GridBagConstraints.WEST;
-			newPanel.add(clock, constraints);
+			newPanel.add(gameOptionsBox, constraints);
 
 			constraints.gridx = 0;
 			constraints.gridy = 1;
