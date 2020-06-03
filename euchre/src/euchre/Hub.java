@@ -8,13 +8,10 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import javax.swing.UIManager;
@@ -22,10 +19,11 @@ import javax.swing.WindowConstants;
 
 public class Hub extends JFrame{
 		private String[] string = {"Hello", "Goodbye"};
-		private static Boolean connect = false;
+		//private static Boolean connect = false;
 		private JButton connectToGame = new JButton("Connect to this Game");
 		private JButton createGame = new JButton("Create New Game");
 		private JComboBox<String> gameOptionsBox = new JComboBox<String>(string);
+		private Client client;
 
 		public static void main(String[] args) {
 			try {
@@ -66,12 +64,15 @@ public class Hub extends JFrame{
 
 		public Hub() throws UnknownHostException, IOException {
 
-			super("Help Queue Display");
+			super("Euchre Card Game Hub");
+			System.out.println("J");
+			client = new Client();
+			client.connect();
+			System.out.println("T");
 			//Make all threads end when the red x is clicked including the Display back-end
 			this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			// create a new panel with GridBagLayout manager
 			JPanel newPanel = new JPanel(new GridBagLayout());
-
 			GridBagConstraints constraints = new GridBagConstraints();
 			constraints.anchor = GridBagConstraints.CENTER;
 			constraints.insets = new Insets(10, 10, 10, 10);
@@ -100,10 +101,6 @@ public class Hub extends JFrame{
 			newPanel.add(createGame, constraints);
 
 
-
-
-			// set border for the panel
-			newPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Philips 115 Lab:"));
 
 			// add the panel to this frame
 			add(newPanel);

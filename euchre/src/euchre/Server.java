@@ -46,6 +46,7 @@ public class Server
 			// Wait for and accept an incoming request
 			if(ar.size() < 4) {
 
+				System.out.println("H");
 				s = ss.accept(); 
 				// System.out.println("New client request received : " + s); 
 	         
