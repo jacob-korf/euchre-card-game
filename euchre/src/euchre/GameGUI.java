@@ -12,7 +12,8 @@
 	import javax.swing.JButton;
 	import javax.swing.JComboBox;
 	import javax.swing.JFrame;
-	import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 	import javax.swing.SwingUtilities;
 	import javax.swing.Timer;
 	import javax.swing.UIManager;
@@ -24,6 +25,10 @@
 			private JButton connectToGame = new JButton("Connect to this Game");
 			private JButton createGame = new JButton("Create New Game");
 			private JComboBox<String> gameOptionsBox = new JComboBox<String>(string);
+			private JLabel player1 = new JLabel("Player 1: Not loaded");
+			private JLabel player2 = new JLabel("Player 2: Not loaded");
+			private JLabel player3 = new JLabel("Player 3: Not loaded");
+			private JLabel player4 = new JLabel("Player 4: Not loaded");
 			private Client client;
 
 			public static void main(String[] args) {
