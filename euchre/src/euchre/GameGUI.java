@@ -91,6 +91,35 @@ import javax.swing.JPanel;
 				constraints.anchor = GridBagConstraints.WEST;
 				newPanel.add(gameOptionsBox, constraints);
 				
+
+				constraints.gridx = 0;
+				constraints.gridy = 2;
+				constraints.gridwidth = 1;
+				constraints.gridheight = 1;
+				constraints.anchor = GridBagConstraints.WEST;
+				newPanel.add(gameOptionsBox, constraints);
+
+				constraints.gridx = 1;
+				constraints.gridy = 2;
+				constraints.gridwidth = 1;
+				constraints.gridheight = 1;
+				constraints.anchor = GridBagConstraints.WEST;
+				newPanel.add(gameOptionsBox, constraints);
+
+				constraints.gridx = 2;
+				constraints.gridy = 2;
+				constraints.gridwidth = 1;
+				constraints.gridheight = 1;
+				constraints.anchor = GridBagConstraints.WEST;
+				newPanel.add(gameOptionsBox, constraints);
+
+				constraints.gridx = 3;
+				constraints.gridy = 2;
+				constraints.gridwidth = 1;
+				constraints.gridheight = 1;
+				constraints.anchor = GridBagConstraints.WEST;
+				newPanel.add(gameOptionsBox, constraints);
+				
 				constraints.gridx = 1;
 				constraints.gridy = 0;
 				constraints.gridwidth = 1;
